@@ -24,15 +24,15 @@ describe "HAPI CMS homepage", ->
     it "should accept valid login details", ->
         finished = false
         foundAppWrapper = false
-        username = "owner"
-        pazzwrd = "HuzuRocks!"
+        username = ""
+        pazzwrd = ""
         runs ->
             helper = new wdh();
             driver.init(driverOptions)
             .then(-> driver.get rootURL)
             .then(-> driver.frame 0)
-            .then(-> helper.setElementValueByCss driver, "#Username", "owner")
-            .then(-> helper.setElementValueByCss driver, "#Password", "HuzuRocks!")
+            .then(-> helper.setElementValueByCss driver, "#Username", "")
+            .then(-> helper.setElementValueByCss driver, "#Password", "")
             .then(-> driver.elementByCss "#login-btn")
             .then((el) -> el.click())
             .then(-> driver.frame null)
